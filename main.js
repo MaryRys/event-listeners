@@ -9,8 +9,13 @@ const activateDeletes = () => {
     
     for (let i = 0; i <deleteButtons.length; i++) {
         const element = deleteButtons[i];
-        element.addEventListener("click", () => {
-            console.log("they clicked delete!!!");
+        element.addEventListener("click", (e) => {
+            // remove card that the button was on
+            const buttonIClicked = e.target;
+            const cardToDelete = buttonIClicked.parentNode.parentNode;
+            cardToDelete.remove();
+            // .parentNode
+            // .remove() takes DOM element off the DOM
         })
     }
 }
